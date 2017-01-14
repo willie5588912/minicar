@@ -1,0 +1,150 @@
+<robot
+  name="minicar">
+  <include filename="$(find minicar)/robots/minicar.gazebo"/>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00167045730418753 7.80625564189563E-18 -0.0190032253599772"
+        rpy="0 0 0" />
+      <mass
+        value="2.02839035952324" />
+      <inertia
+        ixx="0.00745516540666622"
+        ixy="-1.34155805999999E-19"
+        ixz="6.94006153690207E-05"
+        iyy="0.0172183146438631"
+        iyz="-1.04631784165227E-18"
+        izz="0.023798035829646" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minicar/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minicar/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lwheel_link">
+    <inertial>
+      <origin
+        xyz="0 -0.01 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.15079644737231" />
+      <inertia
+        ixx="0.000103044239037745"
+        ixy="6.03270183280649E-21"
+        ixz="3.14128730788783E-21"
+        iyy="0.000196035381584003"
+        iyz="1.15295567543725E-20"
+        izz="0.000103044239037745" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minicar/meshes/lwheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minicar/meshes/lwheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.11 0.129999999999999 -0.0400000000000008"
+      rpy="0 0 -1.22464679914735E-16" />
+    <parent
+      link="base_link" />
+    <child
+      link="lwheel_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="rwheel_link">
+    <inertial>
+      <origin
+        xyz="0 0.01 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.15079644737231" />
+      <inertia
+        ixx="0.000103044239037745"
+        ixy="9.30312946755742E-21"
+        ixz="-9.91651691015673E-22"
+        iyy="0.000196035381584003"
+        iyz="1.03532332363081E-20"
+        izz="0.000103044239037745" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minicar/meshes/rwheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minicar/meshes/rwheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.11 -0.13 -0.04"
+      rpy="0 0 -1.22464679914735E-16" />
+    <parent
+      link="base_link" />
+    <child
+      link="rwheel_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+</robot>
